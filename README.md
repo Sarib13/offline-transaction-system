@@ -16,7 +16,7 @@ such as login,transaction management (offline) and transaction tracking using a 
 ## compilation
 1. Clone repo in Android Studio using the command:
 
-```
+```Bash
 git clone https://github.com/Sarib13/offline-transaction-system.git
 ```
 
