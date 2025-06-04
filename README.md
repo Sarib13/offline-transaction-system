@@ -2,18 +2,22 @@
 
 ## 📄 Overview
 
-This is a beginner-friendly Android banking application developed in **Java** using **Object-Oriented Programming (OOP)** principles. It simulates real-world banking operations 
-such as login,transaction management (online & offline), QR code generation, and transaction tracking using a local database.
+This is a beginner-friendly Android banking application developed in **Java** using **Object-Oriented Programming (OOP)** principles. It simulates banking operations 
+such as login,transaction management (offline) and transaction tracking using a local database.
 
 ## 🤖 Features
 
 * Simple login system with input validation
 * Secure offline transaction system
-* QR code generation for each offline transaction
 * Local transaction queue and history tracking using SQLite/Room
-* Internet check using `ConnectivityManager`
+* Internet check using `NetworkUtil.java`
 * Clean, modular, and commented Java code
 
+## compilation
+Clone repo in Android Studio using the command
+
+```
+git clone 
 ## 🔧 OOP Principles Implemented
 
 * **Abstraction**: `Transaction.java` abstract class
@@ -32,7 +36,6 @@ such as login,transaction management (online & offline), QR code generation, and
 * GUI: `EditText`, `Button`, `TextView`
 * Inputs: Email and Password
 * Buttons: Login
-* "Forgot Password" text: clickable and color changes on click
 * Validations:
 
   * Email format check
@@ -42,13 +45,12 @@ such as login,transaction management (online & offline), QR code generation, and
   * Toast/Alert for success or error
   * Redirect to Dashboard on valid login
   * Show "Invalid Credentials" otherwise
-  * Show dialog/page on "Forgot Password"
 
 ### 2. Bank Dashboard (Post-Login)
 
 * Display:
 
-  * Account holder name, account number, bank name
+  * Account holder name, bank name
   * Static/simulated current balance
 * Options:
 
@@ -57,8 +59,8 @@ such as login,transaction management (online & offline), QR code generation, and
 
 ### 3. Internet Check Logic
 
-* Use `ConnectivityManager` to check internet
-* If online: enable Online Transaction
+* Use `NetworkUtil.java` to check internet
+* If online: enable Online Transaction(Unavailable yet)
 * If offline: Show dialog:
 
   * Message: "Internet not available. Continue with Offline Transaction?"
@@ -67,17 +69,15 @@ such as login,transaction management (online & offline), QR code generation, and
 
 * Fields:
 
+  * Bank type (HBL, UBL, Easypaisa, JazzCash, etc.)
   * Receiver’s account number
   * Amount (must be > 0)
-  * Bank type (HBL, UBL, Easypaisa, JazzCash, etc.)
   * Transaction reason
 * Submit:
 
   * MFA: 4-digit PIN + Face ID (mocked)
-  * Generate QR Code
   * Show transaction ID and confirmation
-  * QR should be traceable
-
+ 
 ### 5. Backend Classes
 
 * `User.java`: Login credentials (email, password)
@@ -122,7 +122,7 @@ such as login,transaction management (online & offline), QR code generation, and
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-* Internet check using `ConnectivityManager`
+* Internet check using `NretworkUtil.java`
 * No Firebase or backend server integration (offline/local only)
 
 ### 10. Offline Banking Simulation
