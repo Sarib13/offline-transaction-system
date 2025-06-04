@@ -14,10 +14,17 @@ such as login,transaction management (offline) and transaction tracking using a 
 * Clean, modular, and commented Java code
 
 ## compilation
-Clone repo in Android Studio using the command
+1. Clone repo in Android Studio using the command:
 
 ```
-git clone 
+git clone https://github.com/Sarib13/offline-transaction-system.git
+```
+
+2. Build the project
+3. Run the Application in any virtual or physical device
+
+
+
 ## 🔧 OOP Principles Implemented
 
 * **Abstraction**: `Transaction.java` abstract class
